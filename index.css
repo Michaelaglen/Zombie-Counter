@@ -1,50 +1,94 @@
+/* 🧟‍♂️ Background Image */
 body {
-    background-image: url("yarn.jpeg");
+    background-image: url("zombies.avif");
+    background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: center;
-    height: 100vh;
+    background-position: center;
 }
 
+/* 🏛 Center Everything */
 .container {
-    background: white;
-    max-width: 80%;
-    margin: auto;
-    border: 3px solid black;
-    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full screen height */
+}
+
+/* 🔴 Spooky Text Styling */
+h1, h2, p {
+    color: red;
+    text-shadow: 3px 3px 5px black, -3px -3px 5px black;
+    font-family: "Rubik Wet Paint", cursive;
+}
+
+/* 🩸 Dripping Blood Effect */
+@keyframes blood-drip {
+    0% { text-shadow: 0 0 5px red; }
+    50% { text-shadow: 0 5px 15px darkred; }
+    100% { text-shadow: 0 10px 25px black; }
 }
 
 h1 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-h2 {
     font-size: 50px;
-    margin-top: 0;
-    margin-bottom: 20px;
+    animation: blood-drip 2s infinite alternate;
 }
 
+/* 💀 Custom Font Styling */
+.rubik-wet-paint-regular {
+    font-family: "Rubik Wet Paint", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: red;
+    text-shadow: 3px 3px 5px black, -3px -3px 5px black;
+}
+
+/* 🔲 Button Styling */
 button {
-    border: 1px solid black;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    background: #8B0000; /* Dark blood red */
     color: white;
-    font-weight: bold;
-    width: 200px;
-    margin-bottom: 5px;
-    border-radius: 5px;
+    font-family: "Rubik Wet Paint", sans-serif;
+    font-size: 20px;
+    padding: 15px;
+    width: 220px;
+    border: 3px solid black;
+    border-radius: 10px;
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* Glowing effect */
+    transition: 0.3s ease-in-out;
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
 }
 
+/* 🔥 Button Hover Effect */
+button:hover {
+    background: #B22222; /* Brighter red */
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+    transform: scale(1.1);
+}
+
+/* 🧟‍♂️ Different Button Colors */
 #increment-btn {
-    background: #2C2891;
+    background: black;
 }
 
 #save-btn {
-    background: #1C7947;
+    background: black;
 }
 
-#save-el {
-    font-weight: bold;
+/* 🌫 Fog Overlay Effect */
+.fog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+    backdrop-filter: blur(5px);
 }
-
